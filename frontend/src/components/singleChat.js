@@ -13,7 +13,7 @@ import UpdateGroupChatModal from './misc/UpdateGroupchatModal';
 import animationData from '../animations/typing.json';
 import ScrollableChat from './ScrollableChat';
 import "./styles.css";
-// import BlankSlate from './misc/BlankSlate';
+
 
 const ENDPOINT = "http://localhost:3000";
 var socket, selectedChatCompare;

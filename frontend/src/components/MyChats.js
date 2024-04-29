@@ -1,12 +1,11 @@
-import { useToast } from '@chakra-ui/toast';
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { ChatState } from '../context/chatProvider';
-// import { log } from 'console';
 import { AddIcon } from '@chakra-ui/icons';
 import { Box, Stack, Text } from '@chakra-ui/layout';
 import { Button } from "@chakra-ui/react";
+import { useToast } from '@chakra-ui/toast';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { getSender } from "../config/ChatLogic";
+import { ChatState } from '../context/chatProvider';
 import ChatLoading from './ChatLoading';
 import GroupChatModel from './misc/GroupChatModel';
 
@@ -17,7 +16,6 @@ const MyChats = ({ fetchAgain }) => {
     const toast = useToast();
 
     const fetchChats = async () => {
-        // console.log(user._id);
         try {
             const config = {
                 headers: {
@@ -114,7 +112,6 @@ const MyChats = ({ fetchAgain }) => {
                                     {!chat.isGroupChat
                                         ? getSender(LoggedUser, chat.users)
                                         : chat.chatName}
-                                    {/* getSender // logged user */}
                                 </Text>
                                 {chat.latestMessage && (
                                     <Text fontSize="xs">

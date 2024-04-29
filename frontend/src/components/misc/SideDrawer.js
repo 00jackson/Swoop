@@ -15,9 +15,6 @@ import { ChatState } from '../../context/chatProvider';
 import ChatLoading from "../ChatLoading";
 import UserListItem from '../UserAvatar/UserListItem';
 import ProfileModal from './ProfileModal';
-// import NotificationBadge from "react-notification-badge";
-// import { Effect } from 'react-notification-badge';
-// import TitleDev from "./TitleDev";
 
 
 function SideDrawer() {
@@ -27,10 +24,7 @@ function SideDrawer() {
     const [loading, setLoading] = useState(false);
     const [loadingChat, setLoadingChat] = useState(false);
 
-    const { user, chats, setSelectedChat, setChats,
-        // notification, 
-        // setNotification 
-    } = ChatState();
+    const { user, chats, setSelectedChat, setChats } = ChatState();
     const toast = useToast();
     const history = useHistory();
 
@@ -132,31 +126,6 @@ function SideDrawer() {
                     <b>Swoop</b>
                 </Text>
                 <div>
-                    {/* <Menu>
-                        <MenuButton p={1}>
-                            <NotificationBadge
-                                count={notification.length}
-                                effect={Effect.SCALE}
-                            />
-                            <BellIcon fontSize="2xl" m={1} />
-                        </MenuButton>
-                        <MenuList pl={2}>
-                            {!notification.length && "No New Messages"}
-                            {notification.map((notify) => (
-                                <MenuItem
-                                    key={notify._id}
-                                    onClick={() => {
-                                        setSelectedChat(notify._id);
-                                        setNotification(notification.filter((n) => n !== notify));
-                                    }}
-                                >
-                                    {notify.chat.isGroupChat
-                                        ? `New Message in ${notify.chat.chatName}`
-                                        : `New Message from ${getSender(user, notify.chat.users)}`}
-                                </MenuItem>
-                            ))}
-                        </MenuList>
-                    </Menu> */}
                     <Menu>
                         <MenuButton as={Button}
                             bg="white"
