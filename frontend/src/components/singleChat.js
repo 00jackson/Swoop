@@ -15,7 +15,7 @@ import ScrollableChat from './ScrollableChat';
 import "./styles.css";
 
 
-const ENDPOINT = "http://localhost:3000";
+const ENDPOINT = "https://swoop.onrender.com";
 var socket, selectedChatCompare;
 
 
